@@ -1,0 +1,9 @@
+import requests
+import bs4
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"
+} # 403 forbidden 해결
+res = requests.get('https://arena.co.kr/product/list.html?cate_no=25', headers=headers)
+bs4.BeautifulSoup(res.text, 'lxml')
+
